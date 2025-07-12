@@ -42,8 +42,6 @@ Reproduced from
 ./download_panoramas.sh
 ```
 
-Refer to the arguments list below to modify the behaviour of the script.  
-
 ## Arguments  
 
 | Name           | Flags    | Type        | Description                                                                                                                                                | Required    | Default |

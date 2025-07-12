@@ -40,6 +40,7 @@ The [config file](./configs/fcn/fcn-d6_r101-d16_4xb2-80k_cityscapes-512x1024.py)
 ```shell
 ./segment_images.sh
 ```
+
 If desired, replace the checkpoint link in the file, and ensure that the necessary config and base files are also downloaded.  
 
 ## Arguments  
