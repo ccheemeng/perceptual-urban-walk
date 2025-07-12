@@ -1,0 +1,1 @@
+python segment_images.py --config ./configs/fcn/fcn-d6_r101-d16_4xb2-80k_cityscapes-512x1024.py --checkpoint-url https://download.openmmlab.com/mmsegmentation/v0.5/fcn/fcn_d6_r101-d16_512x1024_80k_cityscapes/fcn_d6_r101-d16_512x1024_80k_cityscapes_20210308_102747-cb336445.pth -i ../GeylangBahru/GeylangBahru-panos/ -o ../GeylangBahru/ -d cuda

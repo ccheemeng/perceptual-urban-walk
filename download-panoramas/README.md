@@ -1,6 +1,6 @@
 # Download Panoramas  
 
-[DownloadPanoramas.py](./DownloadPanoramas.py) is a utility to download street
+[download_panoramas.py](./download_panoramas.py) is a script to download street
  imagery via the [streetlevel](https://streetlevel.readthedocs.io/) API.  
 
 #### Input  
@@ -13,7 +13,7 @@
 * A directory containing panoramas found within the query area, and  
 * A ```<name>.csv``` with xyz coordinates for each panorama  
 
-Outputs are always written in EPSG:3414.    
+Outputs are always written in EPSG:3414.  
 
 ## Installation  
 
@@ -21,28 +21,28 @@ Reproduced from
  [Conda's user guide](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file).  
 
 1. Create the environment from the ```environment.yml``` file:  
-    ```
+    ```shell
     conda env create -f environment.yml
     ```
 2. Activate the new environment:  
-    ```
+    ```shell
     conda activate download-panoramas
     ```
 3. Verify that the new environment was installed correctly:  
-    ```
+    ```shell
     conda env list
     ```
     You can also use ```conda info --envs```.  
 
 ## Running  
 
-[downloadPanoramas.sh](./downloadPanoramas.sh) has been provided to work with
+[download_panoramas.sh](./download_panoramas.sh) has been provided to work with
  the provided test [GeylangBahru](../GeylangBahru/) input. To run it:  
-```
-./downloadPanoramas.sh
+```shell
+./download_panoramas.sh
 ```
 
-Refer to the arguments list below to modify the behaviour of the utility.  
+Refer to the arguments list below to modify the behaviour of the script.  
 
 ## Arguments  
 
