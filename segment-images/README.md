@@ -19,7 +19,7 @@ Ensure the following requirements are installed:
 1. Python 3.11.13
 2. [PyTorch 2.1.2](https://pytorch.org/get-started/previous-versions/)
 3. [MMCV 2.1.0](https://mmcv.readthedocs.io/) for MMSegmentation  
-4. MMSegmentation 1.2.2  
+4. [MMSegmentation](https://mmsegmentation.readthedocs.io/) 1.2.2  
 5. NumPy < 2
 
 Other software version combinations may work but are untested.  
@@ -36,7 +36,7 @@ The [config file](./configs/fcn/fcn-d6_r101-d16_4xb2-80k_cityscapes-512x1024.py)
 
 ## Running  
 
-```segment_images.sh``` has been provided to work with the provided test [GeylangBahru](../GeylangBahru/) input. To run it:  
+[segment_images.sh](./segment_images.sh) has been provided to work with the provided test [GeylangBahru](../GeylangBahru/) input. To run it:  
 ```shell
 ./segment_images.sh
 ```
