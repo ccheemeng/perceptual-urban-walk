@@ -111,7 +111,9 @@ def main(args):
                 if currDistance < distance:
                     nearest = node
                     distance = currDistance
-            GQuery = GCircle.subgraph(nx.node_connected_component(GCircle, nearest)).copy()
+            GQuery = GCircle\
+                .subgraph(nx.node_connected_component(GCircle, nearest))\
+                .copy()
             linestrings = []
             for o1, o2 in GQuery.edges():
                 q1 = GQuery.nodes[o1]["point"]
@@ -123,7 +125,8 @@ def main(args):
             ids = []
             for id, point in points.items():
                 if point.within(queryPoint.buffer(2 * OBSERVER_RADIUS)):
-                    ids.append([id, point.x, point.y, point.z if point.has_z else None])
+                    ids.append([id, point.x, point.y,
+                                point.z if point.has_z else None])
             with open(os.path.join(pointsDir, f"{x}_{y}.csv"), 'w') as fp:
                 writer = csv.writer(fp)
                 writer.writerow(["id", 'x', 'y', 'z'])

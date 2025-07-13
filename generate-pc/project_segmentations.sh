@@ -1,0 +1,1 @@
+python project_segmentations.py -p ../GeylangBahru/GeylangBahru-coords.csv -s ../GeylangBahru/GeylangBahru-segmented/ -b ../GeylangBahru/GeylangBahru-buildings.geojson -o ../GeylangBahru/GeylangBahru-segmented-pc/ -f 10

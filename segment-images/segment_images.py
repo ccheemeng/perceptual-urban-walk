@@ -25,7 +25,8 @@ def main(args):
         checkpoint = args.checkpoint_url.split('/')[-1]
     else:
         print("downloading")
-        checkpoint = urlretrieve(args.checkpoint_url, args.checkpoint_url.split('/')[-1])
+        checkpoint = urlretrieve(args.checkpoint_url,
+                                 args.checkpoint_url.split('/')[-1])
     config = args.config
     device = args.device
     model = init_model(config, checkpoint, device=device)
@@ -33,14 +34,17 @@ def main(args):
     noViz = args.no_viz
     Path(join(outputDir, segmentationDir)).mkdir(parents=True, exist_ok=True)
     if not noViz:
-        Path(join(outputDir, visualisationDir)).mkdir(parents=True, exist_ok=True)
+        Path(join(outputDir, visualisationDir))\
+            .mkdir(parents=True, exist_ok=True)
 
     for dirpath, dirames, filenames in walk(join(inputDir)):
         for filename in filenames:
             imageName = '.'.join(filename.split('.')[:-1])
             imagePath = join(inputDir, filename)
-            segmentationPath = join(outputDir, segmentationDir, f"{imageName}.json")
-            visualisationPath = join(outputDir, visualisationDir, f"{imageName}.jpg")
+            segmentationPath = join(outputDir, segmentationDir,
+                                    f"{imageName}.json")
+            visualisationPath = join(outputDir, visualisationDir,
+                                     f"{imageName}.jpg")
             if Path(segmentationPath).is_file():
                 continue
 
