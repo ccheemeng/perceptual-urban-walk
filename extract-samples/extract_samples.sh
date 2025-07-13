@@ -1,0 +1,1 @@
+python extract_samples.py -a ../GeylangBahru/GeylangBahru-adjacencies.json -p ../GeylangBahru/GeylangBahru-points.csv -b ../GeylangBahru/GeylangBahru-boundary.geojson -o ../GeylangBahru/ -n 1536

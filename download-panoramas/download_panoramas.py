@@ -34,7 +34,7 @@ def main(args):
     if args.boundary != None:
         boundary = read_file(args.boundary).to_crs(3414)
         panos = panos.clip(boundary, keep_geom_type=True)
-    with open(join(args.out, f"{name}-id.csv"), 'w') as fp:
+    with open(join(args.out, f"{name}-coords.csv"), 'w') as fp:
         csvwriter = writer(fp)
         csvwriter.writerow(("id", 'x', 'y', 'z'))
         for index, row in panos.iterrows():
