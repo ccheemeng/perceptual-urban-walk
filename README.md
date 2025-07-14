@@ -3,7 +3,7 @@
 ```mermaid
 flowchart TD
     DP["download-panoramas"]
-    click DP "[1]"
+    click DP href "./download-panoramas/"
     SI["segment-images"]
     ES["extract-samples"]
     DP --> SI
