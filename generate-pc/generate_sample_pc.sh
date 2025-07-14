@@ -1,0 +1,1 @@
+python generate_sample_pc.py -p ../GeylangBahru/GeylangBahru-sample-points/ -r ../GeylangBahru/GeylangBahru-sample-regions/ -s ../GeylangBahru/GeylangBahru-segmented-pc/ -o ../GeylangBahru/GeylangBahru-sample-pc/ -b 10

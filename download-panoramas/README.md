@@ -11,7 +11,7 @@
 #### Output  
 
 * A directory containing panoramas found within the query area, and  
-* A ```<name>-coords.csv``` with xyz coordinates for each panorama  
+* A ```.csv``` file with xyz coordinates for each panorama  
 
 Outputs are always written in EPSG:3414.  
 

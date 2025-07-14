@@ -77,9 +77,9 @@ def main(args):
         for i in range(img_height):
             for j in range(img_width):
                 label = segmentation[i][j]
-                if args.filter_labels != None\
-                    and (len(args.filter_labels) > 0\
-                         and label in args.filter_labels):
+                if args.exclude_labels != None\
+                    and (len(args.exclude_labels) > 0\
+                         and label in args.exclude_labels):
                     continue
                 ray_origins.append([point.x, point.y, 0])
                 ray_directions.append(pixel_to_point(j, i,
@@ -139,7 +139,7 @@ if __name__ == "__main__":
         type=str
     )
     parser.add_argument(
-        "-f", "--filter-labels",
+        "-e", "--exclude-labels",
         nargs='*',
         required=False,
         type=int
