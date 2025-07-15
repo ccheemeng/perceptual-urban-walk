@@ -1,0 +1,1 @@
+python encode_pc.py -d ../GeylangBahru/GeylangBahru-sample-pc/ -w ./best-model-state-dict.pt -o ../GeylangBahru/GeylangBahru-encodings/ --device cuda

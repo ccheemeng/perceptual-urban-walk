@@ -14,7 +14,7 @@ Two Python scripts are provided here:
 
 #### Output  
 
-* A directory containing labelled point clouds as ```.csv``` files from projecting the panorama segmentations on extrusions of the building footprints  
+* A directory containing labelled point clouds as ```.csv``` files by projecting the panorama segmentations on extrusions of the building footprints  
 
 ### Generate Sample PC  
 
@@ -22,12 +22,11 @@ Two Python scripts are provided here:
 
 * A directory containing ```.csv``` files per sample describing the panoramas required to build that sample,  
 * A directory containing ```.geojson``` files per sample describing the sample region  
+* A directory containing labelled point clouds as ```.csv``` files by projecting the panorama segmentations on extrusions of the building footprints  
 
 #### Output  
 
-* A directory containing ```.csv``` files per sample describing the panoramas required to build that sample, and  
-* A directory containing ```.geojson``` files per sample describing the sample region, and  
-* A directory containing labelled point clouds as ```.csv``` files from projecting the panorama segmentations on extrusions of the building footprints  
+* A directory containing labelled point clouds as ```.csv``` files by clipping the projected segmentations with the sample regions  
 
 ## Installation  
 
