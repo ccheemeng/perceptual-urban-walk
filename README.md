@@ -7,7 +7,7 @@ Execute the following utilities in order:
 4. [generate-pc](./generate-pc/)
 5. [encode-pc](./encode-pc/)
 6. [cluster-samples](./cluster-samples/)
-7. [generate-pc](./generate-pc/)
+7. [generate-env](./generate-env/)
 
 A test input has been provided in [GeylangBahru/](./GeylangBahru/) with the necessary base files:  
 * [GeylangBahru-boundary.geojson](./GeylangBahru/GeylangBahru-boundary.geojson)  
