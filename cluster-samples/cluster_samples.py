@@ -11,7 +11,7 @@ def main(args):
         scaler = joblib.load(fp)
     with open(args.pca, "rb") as fp:
         pca = joblib.load(fp)
-    with open(args.pca, "rb") as fp:
+    with open(args.kmeans, "rb") as fp:
         kmeans = joblib.load(fp)
 
     encodings = {}

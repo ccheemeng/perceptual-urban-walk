@@ -17,13 +17,13 @@ def main(args):
             with open(os.path.join(args.regions, f"{id}.geojson"), 'r') as fp:
                 regions.append(shapely.from_geojson(json.load(fp)))
         break
-
+    
     name = args.name
     if name == None:
         name = os.path.basename(os.path.dirname(args.out))
     points_gdf = gpd.GeoDataFrame(index=ids, geometry=points, crs=3414)
     regions_gdf = gpd.GeoDataFrame(index=ids, geometry=regions, crs=3414)
-    with open(os.path.join(args.out, f"{name}-points.geojson"), 'w') as fp:
+    with open(os.path.join(args.out, f"{name}-samples.geojson"), 'w') as fp:
         json.dump(points_gdf.to_geo_dict(), fp)
     with open(os.path.join(args.out, f"{name}-regions.geojson"), 'w') as fp:
         json.dump(regions_gdf.to_geo_dict(), fp)
@@ -50,3 +50,5 @@ if __name__ == "__main__":
         required=False,
         type=str
     )
+    args = parser.parse_args()
+    main(args)
