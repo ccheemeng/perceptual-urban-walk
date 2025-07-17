@@ -1,8 +1,9 @@
 # Generate PC  
 
-Two Python scripts are provided here:  
+Three Python scripts are provided here:  
 1. [project_segmentations.py](./project_segmentations.py) to project panorama segmentations onto a extrusions of building footprints, and  
 2. [generate_sample_pc.py](./generate_sample_pc.py) to generate point clouds using polygon regions to clip the projected segmentations  
+2. [compile_samples.py](./compile_samples.py) to generate a GeoDataFrame of sample points and corresponding sample regions based from the successfully generated sample point clouds  
 
 ### Project Segmentations  
 
@@ -28,9 +29,23 @@ Two Python scripts are provided here:
 
 * A directory containing labelled point clouds as ```.csv``` files by clipping the projected segmentations with the sample regions  
 
+### Compile Samples  
+
+#### Input  
+
+* A directory containing labelled point clouds \(sample point clouds\) as ```.csv``` files  
+* A directory containing ```.geojson``` files per sample describing the sample region  
+
+### # Output  
+
+* A GeoDataFrame as a ```.geojson``` file describing each sample point  
+* A GeoDataFrame as a ```.geojson``` file describing each sample region  
+
 ## Installation  
 
-For both scripts, create the environment from the respective ```.yml``` environment file and activate it.  
+For project-segmentations and generate-sample-pc, create the environment from the respective ```.yml``` environment file and activate it.  
+
+**compile-samples can use either environment.**  
 
 ### Project Segmentations  
 
@@ -48,12 +63,13 @@ conda activate generate-sample-yml
 
 ## Running  
 
-Run project_segmentations.py then generate_sample_pc.py.  
+Run project_segmentations.py, generate_sample_pc.py, then compile_samples.py.  
 
 Shell scripts have been provided to work with the provided test [GeylangBahru](../GeylangBahru/) input. To run it:  
 ```shell
 ./project_segmentations.sh
 ./generate_sample_pc.sh
+./compile_samples.sh
 ```
 
 ## Arguments  
@@ -73,7 +89,7 @@ Shell scripts have been provided to work with the provided test [GeylangBahru](.
 | Name                | Flags    | Type      | Description                                                                                                                                                  | Required    | Default |
 |---------------------|----------|-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|---------|
 | ```points```        | ```-p``` | ```str``` | Directory containing ```.csv``` files describing the panoramas required to build each sample                                                                 | ```True```  | -       |
-| ```regions```       | ```-r``` | ```str``` | Directory containing ```.geojson``` files describing the sample regions for each sample                                                                      | ```True```  | -       |
+| ```regions```       | ```-r``` | ```str``` | Directory containing ```.geojson``` files describing the regions for each sample                                                                             | ```True```  | -       |
 | ```segmentations``` | ```-s``` | ```str``` | Directory containing point clouds of projected semantically segmented panoramas                                                                              | ```True```  | -       |
 | ```out```           | ```-o``` | ```str``` | Directory to create output files in                                                                                                                          | ```True```  | -       |
 | ```batch-size```    | ```-b``` | ```int``` | How many samples are created in each iteration<sup>[*](#batch-size)</sup>                                                                                    | ```False``` | 500     |
@@ -83,4 +99,13 @@ Shell scripts have been provided to work with the provided test [GeylangBahru](.
 
 Note:  
 * <a name="batch-size">Unless training on a HPC system or a system with a lot of RAM, use a ```batch-size``` much more conservative than the default.<br>As a guide, a batch size of <b>10</b> safely works on a system with <b>32GiB of RAM</b>, but a size up to 20 is possible.<br>The script may be resumed in the event that the program runs out of memory.</a>  
-* <a name="no-sample-warning">I do not recommend using ```no-sample```.</a>
+* <a name="no-sample-warning">I do not recommend using ```no-sample```.</a>  
+
+### Compile Samples  
+
+| Name            | Flags    | Type      | Description                                                                                      | Required    | Default |
+|-----------------|----------|-----------|--------------------------------------------------------------------------------------------------|-------------|---------|
+| ```sample-pc``` | ```-s``` | ```str``` | Directory containing ```.csv``` files describing the sample point clouds                         | ```True```  | -       |
+| ```regions```   | ```-r``` | ```str``` | Directory containing ```.geojson``` files describing the regions for each sample                 | ```True```  | -       |
+| ```out```       | ```-o``` | ```str``` | Directory to create output files in                                                              | ```True```  | -       |
+| ```name```      | ```-n``` | ```str``` | Name for sample points and regions GeoDataFrame, derived from ```out``` basename if not provided | ```False``` | -       |

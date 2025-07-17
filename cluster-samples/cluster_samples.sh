@@ -1,0 +1,1 @@
+python cluster_samples.py -s ./models/scaler.pkl -p ./models/pca.pkl -k ./models/kmeans.pkl -e ../GeylangBahru/GeylangBahru-encodings/ -o ../GeylangBahru/GeylangBahru-clusters.csv

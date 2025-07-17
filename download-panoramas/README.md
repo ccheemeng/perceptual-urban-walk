@@ -17,22 +17,10 @@ Outputs are always written in EPSG:3414.
 
 ## Installation  
 
-Reproduced from
- [Conda's user guide](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file).  
-
-1. Create the environment from the ```environment.yml``` file:  
-    ```shell
-    conda env create -f environment.yml
-    ```
-2. Activate the new environment:  
-    ```shell
-    conda activate download-panoramas
-    ```
-3. Verify that the new environment was installed correctly:  
-    ```shell
-    conda env list
-    ```
-    You can also use ```conda info --envs```.  
+Create the environment from the ```download-panoramas.yml``` environment file and activate it.  
+```shell
+conda env create -f download-panoramas.yml
+conda activate download-panoramas
 
 ## Running  
 

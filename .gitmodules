@@ -1,3 +1,6 @@
 [submodule "encode-pc/labelled-pointnet-autoencoder"]
 	path = encode-pc/labelled-pointnet-autoencoder
 	url = https://github.com/ccheemeng/labelled-pointnet-autoencoder.git
+[submodule "generate-env/perceptual-env-gen"]
+	path = generate-env/perceptual-env-gen
+	url = https://github.com/ccheemeng/perceptual-env-gen.git

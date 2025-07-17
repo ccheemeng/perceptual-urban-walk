@@ -1,0 +1,1 @@
+python compile_samples.py -s ../GeylangBahru/GeylangBahru-sample-pc/ -r ../GeylangBahru/GeylangBahru-sample-regions/ -o ../GeylangBahru/

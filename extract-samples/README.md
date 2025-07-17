@@ -31,22 +31,11 @@ Two Python scripts are provided here:
 
 ## Installation  
 
-Reproduced from
- [Conda's user guide](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file).  
-
-1. Create the environment from the ```environment.yml``` file:  
-    ```shell
-    conda env create -f extract-samples.yml
-    ```
-2. Activate the new environment:  
-    ```shell
-    conda activate extract-samples
-    ```
-3. Verify that the new environment was installed correctly:  
-    ```shell
-    conda env list
-    ```
-    You can also use ```conda info --envs```.  
+Create the environment from the ```extract-samples.yml``` environment file and activate it.  
+```shell
+conda env create -f extract-samples.yml
+conda activate extract-samples
+```
 
 ## Running  
 

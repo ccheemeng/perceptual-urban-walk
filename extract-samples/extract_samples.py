@@ -4,7 +4,6 @@ TOLERANCE = 1E-15
 
 import geopandas as gpd
 import networkx as nx
-from pyproj import Transformer
 import shapely
 
 import argparse
