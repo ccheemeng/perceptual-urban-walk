@@ -9,7 +9,7 @@ Three Python scripts are provided here:
 
 #### Input  
 
-* A ```.csv``` file describing the coordinates of each panorama,  
+* A ```.csv``` file describing the coordinates of each panorama  
 * A directory of semantically segmented panoramas as ```.json``` files, and  
 * Building footprints described via a ```.geojson``` file in EPSG:3414  
 
@@ -98,7 +98,7 @@ Shell scripts have been provided to work with the provided test [GeylangBahru](.
 | ```no-sample```     | -        | -         | If used, supersedes ```sample-size``` and ```write-small``` and writes [ALL](#no-sample-warning) points from segmented panoramas contributing to each sample | ```False``` | -       |
 
 Note:  
-* <a name="batch-size">Unless training on a HPC system or a system with a lot of RAM, use a ```batch-size``` much more conservative than the default.<br>As a guide, a batch size of <b>10</b> safely works on a system with <b>32GiB of RAM</b>, but a size up to 20 is possible.<br>The script may be resumed in the event that the program runs out of memory.</a>  
+* Unless training on a HPC system or a system with a lot of RAM, <a name="batch-size">use a ```batch-size``` much more conservative than the default</a>.<br>As a guide, a batch size of <b>10</b> safely works on a system with <b>32GiB of RAM</b>, but a size up to 20 is possible.<br>The script may be resumed in the event that the program runs out of memory.</a>  
 * <a name="no-sample-warning">I do not recommend using ```no-sample```.</a>  
 
 ### Compile Samples  

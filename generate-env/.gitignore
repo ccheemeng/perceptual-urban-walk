@@ -1,0 +1,7 @@
+*
+!.gitignore
+!perceptual-env-gen/
+!generate_env.sh
+!generate_env_pc.sh
+!generate-env.yml
+!README.md

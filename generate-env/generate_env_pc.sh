@@ -1,0 +1,1 @@
+python ./perceptual-env-gen/Generate.py --gen-dir ../GeylangBahru/GeylangBahru-env-gen/ --pc-dir ./beautyworld-sample-pc/
