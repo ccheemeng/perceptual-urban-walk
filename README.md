@@ -1,5 +1,24 @@
 # Perceptual Urban Walk  
 
+Execute the following utilities in order:  
+1. [download-panoramas](./download-panoramas/)
+2. [segment-images](./segment-images/)
+3. [extract-samples](./extract-samples/)
+4. [generate-pc](./generate-pc/)
+5. [encode-pc](./encode-pc/)
+6. [cluster-samples](./cluster-samples/)
+7. [generate-pc](./generate-pc/)
+
+A test input has been provided in [GeylangBahru/](./GeylangBahru/) with the necessary base files:  
+* [GeylangBahru-boundary.geojson](./GeylangBahru/GeylangBahru-boundary.geojson)  
+* [GeylangBahru-polygons.geojson](./GeylangBahru/GeylangBahru-polygons.geojson)  
+* [GeylangBahru-buildings.geojson](./GeylangBahru/GeylangBahru-buildings.geojson)  
+* [GeylangBahru-target.csv](./GeylangBahru/GeylangBahru-target.csv)  
+
+The full outcome of executing all utilities on the test input can be found in the [releases](https://github.com/ccheemeng/perceptual-urban-walk/releases).  
+
+The utilities do not always have to be run sequentially. As long as all the prerequisites are met, certain operations may be performed concurrently. Refer to the flowchart below for the required inputs and expected outputs for each utility and sub-utility.  
+
 ```mermaid
 flowchart TD
     Boundary(["GeylangBahru-boundary.geojson"])
@@ -41,7 +60,6 @@ flowchart TD
         end
         EPPy["encode-pc.py"]
         BMSD(["best-model-state-dict.pt"])
-        click LPNAE href "https://github.com/ccheemeng/labelled-pointnet-autoencoder/tree/main"
         click EPPy href "https://github.com/ccheemeng/perceptual-urban-walk/tree/main/encode-pc"
         click BMSD href "https://github.com/ccheemeng/labelled-pointnet-autoencoder/releases/tag/v0.1.1"
     end
@@ -59,7 +77,8 @@ flowchart TD
         end
         GESh["generate_env.sh"]
         GEPSh["generate_env_pc.sh"]
-        click PEG href "https://github.com/ccheemeng/perceptual-env-gen/tree/main"
+        click PEGMain href "https://github.com/ccheemeng/perceptual-env-gen/tree/main"
+        click PEGGenerate href "https://github.com/ccheemeng/perceptual-env-gen/tree/main"
         click GESh href "https://github.com/ccheemeng/perceptual-urban-walk/tree/main/generate-env"
         click GEPSh href "https://github.com/ccheemeng/perceptual-urban-walk/tree/main/generate-env"
     end
@@ -151,14 +170,27 @@ flowchart TD
     QuerySamplePcs --> PEGGenerate
     PEGGenerate --> PointsGen
 
-    style Panos rx:0.75vw,ry:0.75vw
-    style Segmentations rx:0.75vw,ry:0.75vw
-    style SegmentationVizs rx:0.75vw,ry:0.75vw
-    style SamplePoints rx:0.75vw,ry:0.75vw
-    style SampleRegions rx:0.75vw,ry:0.75vw
-    style SegmentedPcs rx:0.75vw,ry:0.75vw
-    style SamplePcs rx:0.75vw,ry:0.75vw
-    style Encodings rx:0.75vw,ry:0.75vw
-    style EnvGen rx:0.75vw,ry:0.75vw
-    style PolygonGen rx:0.75vw,ry:0.75vw
+    classDef directory rx:0.8vw,ry:0.8vw
+    classDef key fill:transparent
+
+    subgraph Key["Key"]
+        Sharp["Utility/Script/Submodule"]
+        Round["Directory/File"]
+    end
+    class Key key
+    class Sharp key
+    class Round key
+    class Round directory
+
+    class Panos directory
+    class Segmentations directory
+    class SegmentationVizs directory
+    class SamplePoints directory
+    class SampleRegions directory
+    class SegmentedPcs directory
+    class SamplePcs directory
+    class Encodings directory
+    class EnvGen directory
+    class PolygonGen directory
+    class Round directory
 ```
