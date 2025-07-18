@@ -35,7 +35,7 @@ Generation is done via [perceptual-env-gen](https://github.com/ccheemeng/percept
 
 #### Input  
 
-* The directory containing the generation output for each test site polygon  
+* The directory containing the generation output for each test site polygon, and  
 * The directory containing point clouds corresponding to each sample from the query site<sup>[how to get](#query-pc)</sup>  
 
 #### Output  
