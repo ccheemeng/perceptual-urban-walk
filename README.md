@@ -9,6 +9,8 @@ Execute the following utilities in order:
 6. [cluster-samples](./cluster-samples/)
 7. [generate-env](./generate-env/)
 
+The utilities do not always have to be run sequentially. As long as all the prerequisites are met, certain operations may be performed concurrently. Refer to the flowchart below for the required inputs and expected outputs for each utility and sub-utility.  
+
 A test input has been provided in [GeylangBahru/](./GeylangBahru/) with the necessary base files:  
 * [GeylangBahru-boundary.geojson](./GeylangBahru/GeylangBahru-boundary.geojson)  
 * [GeylangBahru-polygons.geojson](./GeylangBahru/GeylangBahru-polygons.geojson)  
@@ -16,8 +18,6 @@ A test input has been provided in [GeylangBahru/](./GeylangBahru/) with the nece
 * [GeylangBahru-target.csv](./GeylangBahru/GeylangBahru-target.csv)  
 
 The full outcome of executing all utilities on the test input can be found in the [releases](https://github.com/ccheemeng/perceptual-urban-walk/releases).  
-
-The utilities do not always have to be run sequentially. As long as all the prerequisites are met, certain operations may be performed concurrently. Refer to the flowchart below for the required inputs and expected outputs for each utility and sub-utility.  
 
 ```mermaid
 flowchart TD
