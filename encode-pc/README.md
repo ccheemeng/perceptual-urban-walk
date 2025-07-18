@@ -19,7 +19,7 @@ Ensure the following requirements are installed:
 
 Other software version combinations may work but are untested.  
 
-I have provided my preferred method of installing the above requirements for my system (CUDA 12.2) with conda and pip:  
+I have provided my preferred method of installing the above requirements for my system (CUDA 12.2) with conda:  
 ```shell
 conda create -n encode-pc anaconda::python=3.11.13 conda-forge::pandas=2.3.1 pytorch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 pytorch-cuda=12.1 -c pytorch -c nvidia -y
 conda activate encode-pc
