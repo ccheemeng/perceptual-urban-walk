@@ -21,6 +21,7 @@ Create the environment from the ```download-panoramas.yml``` environment file an
 ```shell
 conda env create -f download-panoramas.yml
 conda activate download-panoramas
+```
 
 ## Running  
 
